@@ -1,0 +1,12 @@
+version: "3" ## especifica a versão do docker-compose file
+
+services: ## Define um serviço
+  app: ## nome do serviço
+    build: . ## localização do dockerfile
+    command: npm run start ## comando a executar
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
